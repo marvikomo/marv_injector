@@ -1,19 +1,17 @@
 import 'reflect-metadata';
 import {getParamInfo} from "./reflection-helper"
 import constructor from "./types/constructor";
-import {instance as ioc_conntainer} from "./ioc-container";
+import Ioc_container from "./ioc-container";
 export function Injector(): Function{
     return (target: constructor<any>)=>{
         let paramInfo = getParamInfo(target);
         return class extends target{
             constructor(...args: any[]){
-              console.log(args)
                 super(
                     ...args.concat(
                         paramInfo.slice(args.length).map((type, index)=>{
-                            console.log(type);
                             try{
-                                return ioc_conntainer.resolve(type);
+                                return Ioc_container.resolve(type);
                             }catch(err){
                                console.log(err)
                             }
