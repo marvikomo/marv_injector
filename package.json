@@ -1,0 +1,14 @@
+{
+  "name": "marv_injector",
+  "version": "1.0.3",
+  "description": "typescript dependency injector",
+  "main": "dist/mrv/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "marvelous ikponmwosa",
+  "license": "ISC",
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
+  }
+}
